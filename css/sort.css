@@ -7,26 +7,29 @@
   font-weight: bold;
 }
 
+/* Стили для меток сортировки */
 #sort-priority+label,
 #sort-type+label {
   display: inline-block;
   text-align: center;
   cursor: pointer;
   padding: 10px 25px;
-  border: 2px solid #ccc;
+  border: 2px solid #4c4848;
   border-radius: 8px;
   margin: 0 5px;
   background-color: #a2b2ce;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 1s, transform 1s;
 }
 
+/* Эффекты при наведении на метку */
 #sort-priority+label:hover,
 #sort-type+label:hover {
-  background-color: #e0e0e0;
+  background-color: #84a7c1;
   transform: scale(1.05);
 }
 
+/* Стили для активной метки сортировки */
 input:checked#sort-priority+label,
 input:checked#sort-type+label {
   background-color: rgba(181, 232, 207, 0.61);
@@ -34,6 +37,7 @@ input:checked#sort-type+label {
   color: #16552c;
 }
 
+/* Общие стили для заголовка и меток */
 #sort-title,
 #sort-priority+label,
 #sort-type+label {
@@ -42,11 +46,13 @@ input:checked#sort-type+label {
   text-align: center;
 }
 
+/* Контейнер для сортировки */
 .sort-container {
   text-align: center;
   margin-top: 20px;
 }
 
+/* Сортировка задач по приоритету */
 input:checked#sort-priority~.tasks-container .task_priority-high {
   order: 1;
 }
@@ -59,6 +65,7 @@ input:checked#sort-priority~.tasks-container .task_priority-low {
   order: 3;
 }
 
+/* Сортировка задач по типу */
 input:checked#sort-type~.tasks-container .task_type-needs {
   order: 1;
 }

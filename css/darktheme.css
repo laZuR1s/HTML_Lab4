@@ -1,29 +1,33 @@
+/* Стили для переключателя тёмной темы */
 #darktheme-toggle+label {
+  /* Установка размеров и положения переключателя */
   width: 100px;
   height: 40px;
   position: relative;
   margin-left: calc(100% - 100px);
   display: inline-block;
-  background: #ebebeb ;
-  border-radius: 30px;
-  cursor: pointer;
+  background: #ebebeb ; /* Светлый фон для переключателя */
+  border-radius: 30px; /* Закруглённые края */
+  cursor: pointer; /* Указатель меняется на руку */
 }
 
+/* Стиль для индикатора внутри переключателя */
 #darktheme-toggle+label::after {
-  content: "";
+  content: ""; /* Пустое содержимое, используемое для декоративного элемента */
   width: 48px;
   height: 38px;
   position: absolute;
   top: 1px;
   left: 2px;
-  background:  #000000;
-  border-radius: 50%;
-  transition: 1s;
+  background:  #000000; /* Чёрный индикатор */
+  border-radius: 50%; /* Закруглённая форма */
+  transition: 1s; /* Плавный переход при переключении */
 }
 
+/* Изменение позиции и цвета индикатора, когда переключатель активен */
 input:checked#darktheme-toggle+label::after {
-  left: 52px;
-  background: #3b3a3d;
+  left: 52px; /* Сдвиг вправо */
+  background: #3b3a3d; /* Темно-серый цвет индикатора */
 }
 
 .background {
@@ -32,41 +36,44 @@ input:checked#darktheme-toggle+label::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(97, 186, 213, 0.24);
-  z-index: -1;
-  transition: 1s;
+  background: rgba(0, 186, 237, 0.24); /* Полупрозрачный голубой фон */
+  z-index: -1; /* Отправляем фон на задний план */
+  transition: 1s; /* Плавное изменение цвета */
 }
 
+/* Изменение цвета фона при активации тёмной темы */
 input:checked#darktheme-toggle+label+.background {
-  background: #333;
+  background: #333; /* Тёмно-серый фон */
   transition: 1s;
 }
 
+/* Изменение цвета текста и элементов интерфейса в тёмной теме */
 input:checked#darktheme-toggle~.tasks-container h2,
 input:checked#darktheme-toggle~label,
 input:checked#darktheme-toggle~#sort-title{
-  color: #f0f0f0;
-  transition: 1s;
+  color: #f0f0f0; /* Светло-серый цвет текста */
+  transition: 1s; /* Плавный переход цвета */
 }
 
 
+/* Стили для меток сортировки задач */
 #sort-priority+label,
 #sort-type+label {
   display: inline-block;
-  padding: 10px 25px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  margin: 0 5px;
-  background-color: #f9f9f9;
-  color: #333;
-  font-size: 16px;
-  transition: background-color 1s, border-color 1s, transform 1s;
+  padding: 10px 25px; /* Внутренние отступы для удобства */
+  border: 2px solid #ccc;  /* Серый контур */
+  border-radius: 8px;  /* Закруглённые края */
+  margin: 0 5px; /* Отступы между элементами */
+  background-color: #f9f9f9; /* Светлый фон */
+  color: #333; /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  transition: background-color 1s, border-color 1s, transform 1s; /* Плавные эффекты при наведении */
 }
 
 /* Эффект при наведении */
 #sort-priority+label:hover,
 #sort-type+label:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.05);
+  background-color: #737272; /* Более тёмный фон при наведении */
+  transform: scale(1.05); /* Увеличение размера */
 }
 

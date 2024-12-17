@@ -2,26 +2,31 @@
 <html lang="ru">
 
 <head>
+  <!-- Указание кодировки для корректного отображения текста -->
   <meta charset="utf-8">
+  <!-- Адаптация страницы под разные устройства -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TASK VIEW</title>
+  <!-- Подключение стилей для оформления -->
   <link rel="stylesheet" href="css\style.css">
   <link rel="stylesheet" href="css\darktheme.css">
   <link rel="stylesheet" href="css\sort.css">
 </head>
 
 <body>
-<!-- Switcher of Theme -->
+<!-- Переключатель темы (светлая/тёмная) -->
 <input type="checkbox" id="darktheme-toggle">
 <label for="darktheme-toggle"></label>
 <div class="background"></div>
 
+<!-- Элементы для выбора сортировки задач -->
 <span id="sort-title">Сортировочка: </span>
 <input type="radio" id="sort-priority" name="sort" checked>
 <label for="sort-priority">По приоритету</label>
 <input type="radio" id="sort-type" name="sort">
 <label for="sort-type">По типу</label>
 
+<!-- Фильтры задач по статусам -->
 <input type="radio" id="selected" name="status" checked>
 <input type="radio" id="in-progress" name="status">
 <input type="radio" id="testing" name="status">
@@ -33,8 +38,10 @@
   <label class="status-label" for="done">Done</label>
 </div>
 
+<!-- Контейнер для задач -->
 <div class="tasks-container">
   <style>
+    /* Динамическое добавление текста в зависимости от типа задачи */
     .task_type-zero .number::after {
       content: " Разработка с нуля";
     }
@@ -48,8 +55,9 @@
     }
   </style>
 
+  <!-- Таб с задачами в статусе "Выбранные" -->
   <div id="tab1" class="status">
-    <!-- Selected -->
+    <!-- Задача с высоким приоритетом -->
     <h2>Выбранные</h2>
     <div class="task task_priority-high task_type-zero">
       <div class="number">Task #1</div>
@@ -62,6 +70,7 @@
       </div>
       <a href="#task-1">Подробнее</a>
     </div>
+    <!-- Задача с низким приоритетом -->
     <div class="task task_priority-low task_type-bugs">
       <div class="number">Task #2</div>
       <div class="task__title">Исправить логику кнопок</div>
@@ -73,6 +82,7 @@
       </div>
       <a href="#task-2">Подробнее</a>
     </div>
+    <!-- Задача со средним приоритетом -->
     <div class="task task_priority-middle task_type-needs">
       <div class="number">Task #3</div>
       <div class="task__title">Создать базу данных для приложения</div>
@@ -109,7 +119,7 @@
     <p class="no-tasks">Нет задач в этом статусе.</p>
   </div>
 
-  <!-- In Progress -->
+  <!-- В процессе -->
   <div id="tab2" class="status">
     <h2>В процессе</h2>
     <div class="task task_priority-middle task_type-needs">
@@ -126,7 +136,7 @@
     <p class="no-tasks">Нет задач в этом статусе.</p>
   </div>
 
-  <!-- Testing -->
+  <!-- Тестирование -->
   <div id="tab3" class="status">
     <h2>В тестировании</h2>
     <div class="task task_priority-low task_type-bugs">
@@ -165,7 +175,7 @@
     <p class="no-tasks">Нет задач в этом статусе.</p>
   </div>
 
-  <!-- Done -->
+  <!-- Выполнено -->
   <div id="tab4" class="status">
     <h2>Выполнено</h2>
     <p class="no-tasks">Нет задач в этом статусе.</p>
@@ -177,6 +187,7 @@
 <div id="task-1" class="task-details">
   <span class="close"><a href="#">✖</a></span>
   <h3>Задача #1</h3>
+  <!-- Детали задачи -->
   <p>Тип: Разработка с нуля</p>
   <p>Приоритет: High</p>
   <p>Тема: Создать фон для приложения</p>
