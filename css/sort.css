@@ -1,0 +1,72 @@
+/* Заголовок сортировки */
+#sort-title {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#sort-priority+label,
+#sort-type+label {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 25px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin: 0 5px;
+  background-color: #a2b2ce;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#sort-priority+label:hover,
+#sort-type+label:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+input:checked#sort-priority+label,
+input:checked#sort-type+label {
+  background-color: rgba(181, 232, 207, 0.61);
+  border-color: #386917;
+  color: #16552c;
+}
+
+#sort-title,
+#sort-priority+label,
+#sort-type+label {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sort-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input:checked#sort-priority~.tasks-container .task_priority-high {
+  order: 1;
+}
+
+input:checked#sort-priority~.tasks-container .task_priority-middle {
+  order: 2;
+}
+
+input:checked#sort-priority~.tasks-container .task_priority-low {
+  order: 3;
+}
+
+input:checked#sort-type~.tasks-container .task_type-needs {
+  order: 1;
+}
+
+input:checked#sort-type~.tasks-container .task_type-zero {
+  order: 2;
+}
+
+input:checked#sort-type~.tasks-container .task_type-bugs {
+  order: 3;
+}

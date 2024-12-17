@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASK VIEW</title>
+  <link rel="stylesheet" href="css\style.css">
+  <link rel="stylesheet" href="css\darktheme.css">
+  <link rel="stylesheet" href="css\sort.css">
+</head>
+
+<body>
+<!-- Switcher of Theme -->
+<input type="checkbox" id="darktheme-toggle">
+<label for="darktheme-toggle"></label>
+<div class="background"></div>
+
+<span id="sort-title">Сортировочка: </span>
+<input type="radio" id="sort-priority" name="sort" checked>
+<label for="sort-priority">По приоритету</label>
+<input type="radio" id="sort-type" name="sort">
+<label for="sort-type">По типу</label>
+
+<input type="radio" id="selected" name="status" checked>
+<input type="radio" id="in-progress" name="status">
+<input type="radio" id="testing" name="status">
+<input type="radio" id="done" name="status">
+<div class="view-selector">
+  <label class="status-label" for="selected">Selected</label>
+  <label class="status-label" for="in-progress">In Progress</label>
+  <label class="status-label" for="testing">Testing</label>
+  <label class="status-label" for="done">Done</label>
+</div>
+
+<div class="tasks-container">
+  <style>
+    .task_type-zero .number::after {
+      content: " Разработка с нуля";
+    }
+
+    .task_type-bugs .number::after {
+      content: " Исправление багов";
+    }
+
+    .task_type-needs .number::after {
+      content: " Необходимо доделать";
+    }
+  </style>
+
+  <div id="tab1" class="status">
+    <!-- Selected -->
+    <h2>Выбранные</h2>
+    <div class="task task_priority-high task_type-zero">
+      <div class="number">Task #1</div>
+      <div class="task__title">Создать фон для приложения</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-7.userapi.com/impg/737n0Sz0paPCvJrXY84FCFwaPxyAKK35IIg7Gg/gufgA7HdMPg.jpg?size=2560x1920&quality=95&sign=662c25439041c33d375731b65359fedd&type=album" alt=" "
+          title=""></div>
+        <div class="name">Лазарев Александр</div>
+      </div>
+      <a href="#task-1">Подробнее</a>
+    </div>
+    <div class="task task_priority-low task_type-bugs">
+      <div class="number">Task #2</div>
+      <div class="task__title">Исправить логику кнопок</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-10.userapi.com/impg/Z-g_RjgU_Zx8rj5B6e2aMbkn2lp8-CsozEw9wg/hejPWqpNKFc.jpg?size=1617x2160&quality=95&sign=afcdfe76cb6a62c0f9939a5ecddf46ce&type=album" alt=" "
+          title=""></div>
+        <div class="name">Степан Пекшин</div>
+      </div>
+      <a href="#task-2">Подробнее</a>
+    </div>
+    <div class="task task_priority-middle task_type-needs">
+      <div class="number">Task #3</div>
+      <div class="task__title">Создать базу данных для приложения</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-48.userapi.com/impg/OMBpHl-QD6WAX88pP8iN-7srLUtrWBmmwWsbHQ/Xs-a07l7NvE.jpg?size=1438x2160&quality=95&sign=4eb00203f038bf26dc8b861f6260530f&type=album" alt=" "
+          title=""></div>
+        <div class="name">Лазарев Владимир</div>
+      </div>
+      <a href="#task-3">Подробнее</a>
+    </div>
+    <div class="task task_priority-high task_type-needs">
+      <div class="number">Task #4</div>
+      <div class="task__title">Оформить визуал</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-74.userapi.com/impg/Cqd5UjR8Kh3ffVkJUsE-2Rj4s3-n9zLV1Gn4bw/ISc5Dl2ZCKU.jpg?size=466x466&quality=95&sign=4320b5d2c1bc7df1c893787e38e3a1b3&type=album" alt=" "
+          title=""></div>
+        <div class="name">Роман Каребин</div>
+      </div>
+      <a href="#task-4">Подробнее</a>
+    </div>
+    <div class="task task_priority-low task_type-zero">
+      <div class="number">Task #5</div>
+      <div class="task__title">Принести печеньки</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-6.userapi.com/impg/C_AS3FZC0SRVrzH4dm2cx463Ks51LuwepElsBg/LadEM5pxLr0.jpg?size=1368x2160&quality=95&sign=59943527be5c25ecca2f3d42d10f5c04&type=album" alt=" "
+          title=""></div>
+        <div class="name">Даниил Козлов</div>
+      </div>
+      <a href="#task-5">Подробнее</a>
+    </div>
+    <p class="no-tasks">Нет задач в этом статусе.</p>
+  </div>
+
+  <!-- In Progress -->
+  <div id="tab2" class="status">
+    <h2>В процессе</h2>
+    <div class="task task_priority-middle task_type-needs">
+      <div class="number">Task #6</div>
+      <div class="task__title">Донести чаек</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-8.userapi.com/impg/kuAtKBw4-wkFDonc0VQxJS5EI2az8xM4hZrDaQ/BGCmXNJdxnE.jpg?size=2560x1920&quality=95&sign=1d3c7bf7c13daad46a165ac8f7709b2e&type=album" alt=" "
+          title=""></div>
+        <div class="name">Серёжа Дарий</div>
+      </div>
+      <a href="#task-6">Подробнее</a>
+    </div>
+    <p class="no-tasks">Нет задач в этом статусе.</p>
+  </div>
+
+  <!-- Testing -->
+  <div id="tab3" class="status">
+    <h2>В тестировании</h2>
+    <div class="task task_priority-low task_type-bugs">
+      <div class="number">Task #7</div>
+      <div class="task__title">Протестировать баги</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-57.userapi.com/impg/De675C6Cm2P9_XnVMqdlDK3wG949nmzDy3ECrw/UtKXLl1c9v0.jpg?size=750x479&quality=95&sign=822eff37819d27568b5aefe0cbd6e3be&type=album" alt=" "
+          title=""></div>
+        <div class="name">Илья Ягуар</div>
+      </div>
+      <a href="#task-7">Подробнее</a>
+    </div>
+    <div class="task task_priority-middle task_type-needs">
+      <div class="number">Task #8</div>
+      <div class="task__title">Доделать баги</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-12.userapi.com/impg/XCOVIuPxaKlEZW4XVK6iB4owGGzL59jFZ1Qxmg/SpRgK4Q5dNE.jpg?size=2560x2560&quality=95&sign=4543f1fb864a87542a36b40844a85fbc&type=album" alt=" "
+          title=""></div>
+        <div class="name">Яромир Хрипченко</div>
+      </div>
+      <a href="#task-8">Подробнее</a>
+    </div>
+    <div class="task task_priority-low task_type-zero">
+      <div class="number">Task #9</div>
+      <div class="task__title">Создать баги</div>
+      <div class="task__user">
+        <div class="avatar"><img
+          src="https://sun9-20.userapi.com/impg/vo8k44P6ZTqT0H8SVb8g80p1HISqEd6VIR5u6g/gHcWK0qr8Y0.jpg?size=236x317&quality=96&sign=035a30994d21e9a82dd3b0ca507fdccd&type=album" alt=" "
+          title=""></div>
+        <div class="name">Егор Семкин</div>
+      </div>
+      <a href="#task-9">Подробнее</a>
+    </div>
+    <p class="no-tasks">Нет задач в этом статусе.</p>
+  </div>
+
+  <!-- Done -->
+  <div id="tab4" class="status">
+    <h2>Выполнено</h2>
+    <p class="no-tasks">Нет задач в этом статусе.</p>
+  </div>
+</div>
+<div id="close" style="display: none;"></div>
+
+<!-- Модальные окна -->
+<div id="task-1" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #1</h3>
+  <p>Тип: Разработка с нуля</p>
+  <p>Приоритет: High</p>
+  <p>Тема: Создать фон для приложения</p>
+  <p>Исполнитель: Лазарев Александр</p>
+</div>
+<div id="task-2" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #2</h3>
+  <p>Тип: Исправление багов</p>
+  <p>Приоритет: Low</p>
+  <p>Тема: Исправить логику кнопок</p>
+  <p>Исполнитель: Степан Пекшин</p>
+</div>
+<div id="task-3" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #3</h3>
+  <p>Тип: Необходимо доделать</p>
+  <p>Приоритет: Middle</p>
+  <p>Тема: Создать базу данных для приложения</p>
+  <p>Исполнитель: Лазарев Владимир</p>
+</div>
+<div id="task-4" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #4</h3>
+  <p>Тип: Необходимо доделать</p>
+  <p>Приоритет: High</p>
+  <p>Тема: Оформить визуал</p>
+  <p>Исполнитель: Роман Каребин</p>
+</div>
+<div id="task-5" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #5</h3>
+  <p>Тип: Разработка с нуля</p>
+  <p>Приоритет: Low</p>
+  <p>Тема: Принести печеньки</p>
+  <p>Исполнитель: Даниил Козлов</p>
+</div>
+<div id="task-6" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #6</h3>
+  <p>Тип: Необходимо доделать</p>
+  <p>Приоритет: Middle</p>
+  <p>Тема: Донести чаек</p>
+  <p>Исполнитель: Серёжа Дарий</p>
+  <p><strong>Описание:</strong> Необходимо вовремя донести чай, чтобы согреть сотрудников.</p>
+</div>
+<div id="task-7" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #7</h3>
+  <p>Тип: Исправление багов</p>
+  <p>Приоритет: Low</p>
+  <p>Тема: Протестировать баги</p>
+  <p>Исполнитель: Илья Ягуар</p>
+  <p><strong>Описание:</strong> В идеале, чтобы тестирование не выдало ошибок ))0)).</p>
+</div>
+<div id="task-8" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #8</h3>
+  <p>Тип: Необходимо доделать</p>
+  <p>Приоритет: Middle</p>
+  <p>Тема: Доделать баги</p>
+  <p>Исполнитель: Яромир Хрипченко</p>
+  <p><strong>Описание:</strong> Выдающийся сотрудник должен делать то, что умеет.
+  </p>
+</div>
+<div id="task-9" class="task-details">
+  <span class="close"><a href="#">✖</a></span>
+  <h3>Задача #9</h3>
+  <p>Тип: Разработка с нуля</p>
+  <p>Приоритет: Low</p>
+  <p>Тема: Создать баги</p>
+  <p>Исполнитель: Егор Семкин</p>
+  <p><strong>Описание:</strong> Выдающийся сотрудник должен делать то, что умеет.</p>
+</div>
+
+</body>
+</html>
